@@ -154,17 +154,63 @@ body {
   font: normal 16px/1 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #212121;
 }
-body h1.logo {
+#header {
+  z-index: 9999;
+  position: absolute;
+  top: 20px;
+}
+#header h1 {
   color: #991515;
   font-family: "Museo Sans", "Effra", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 87px;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.7);
+  margin-left: 20px;
 }
-body h1.logo a {
+#header h1 a {
   text-decoration: none;
   color: #991515;
 }
-body nav#mainNavigation {
+#header h1 a span {
+  font-size: 18px;
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-style: italic;
+  text-shadow: none;
+  color: #2f2f2f;
+}
+.slider {
+  position: absolute;
+  top: 0;
+  display: block;
+}
+.slider img {
+  z-index: 1;
+  position: relative;
+  display: block;
+  border: 1px solid #212121;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.slider .infoSlider {
+  margin-top: -200px;
+  z-index: 2;
+  float: right;
+  margin-right: 40px;
+  padding: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  /* stroke */
+
+  background-color: #f1f1f1;
+  /* layer fill content */
+
+  background-image: linear-gradient(bottom, rgba(0, 0, 0, 0.2) 0%, rgba(255, 255, 255, 0.2) 100%);
+  /* gradient overlay */
+
+}
+nav#mainNavigation {
+  clear: both;
+  overflow: hidden;
+  margin-top: 470px;
   border: 1px solid rgba(59, 59, 59, 0.5);
   /* stroke */
 
@@ -176,15 +222,15 @@ body nav#mainNavigation {
 
   margin-bottom: 30px;
 }
-body nav#mainNavigation ul * {
+nav#mainNavigation ul * {
   text-align: justify;
 }
-body nav#mainNavigation ul li {
+nav#mainNavigation ul li {
   display: inline-block;
   position: relative;
   margin: 20px 25px;
 }
-body nav#mainNavigation ul li a {
+nav#mainNavigation ul li a {
   text-decoration: none;
   color: #991515;
   /* text color */
@@ -193,11 +239,11 @@ body nav#mainNavigation ul li a {
   font-size: 22px;
   padding-bottom: 5px;
 }
-body nav#mainNavigation ul li a:hover {
+nav#mainNavigation ul li a:hover {
   border-bottom: 1px solid #991515;
   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
-body div#main h1 {
+div#main h1 {
   color: #991515;
   /* text color */
 
@@ -209,31 +255,61 @@ body div#main h1 {
 
   margin-bottom: 30px;
 }
-body div#main identity p {
+div#main #identity p {
   color: #2f2f2f;
   /* text color */
 
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 16px;
 }
-body #leftBar #searchForm input {
-  float: left;
-  display: inline;
-  height: 50px;
-  color: #fdf9e5;
-  opacity: .8;
+div#main #identity img {
+  border: 1px solid #2f2f2f;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-body #leftBar #searchForm input[type=submit] {
+div#main #interest .list {
+  text-indent: -9999px;
+  background: transparent url('../img/interest.png') 0 0 no-repeat;
+  height: 200px;
+}
+#leftBar h2 {
+  visibility: : hidden;
+  display: none;
+}
+#leftBar #searchForm input[type=text] {
+  opacity: .8;
+  /* layer alpha */
+
+  border: 1px solid #8f8f8f;
+  /* stroke */
+
+  height: 50px;
+  width: 200px;
+  color: #212121;
+  background-color: #fdf9e5;
+  opacity: .8;
+  outline: none;
+  font: 16px/1 normal "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+#leftBar #searchForm input[type=text]:focus {
+  border: 1px solid #000;
+}
+#leftBar #searchForm input[type=submit] {
   background: transparent url(loupe.png) 0 0 no-repeat;
   width: 50px;
   text-indent: -9999px;
   outline: none;
   cursor: pointer;
+  border: 1px solid #8f8f8f;
+  /* stroke */
+
+  height: 50px;
 }
-body #leftBar #language {
+#leftBar #language {
   float: left;
 }
-body .sidebar ul {
+.sidebar ul {
   background-color: #1d1d1d;
   color: #ebf7f7;
   -webkit-box-sizing: border-box;
@@ -241,7 +317,7 @@ body .sidebar ul {
   box-sizing: border-box;
   padding: 13px;
 }
-body .sidebar ul h1 {
+.sidebar ul h1 {
   color: #fdf9e5;
   /* text color */
 
@@ -252,10 +328,10 @@ body .sidebar ul h1 {
 
   margin-bottom: 12px;
 }
-body .sidebar ul li {
+.sidebar ul li {
   list-style: none;
 }
-body .sidebar ul li article h2 {
+.sidebar ul li article h2 {
   color: #ebf7f7;
   /* text color */
 
@@ -263,7 +339,7 @@ body .sidebar ul li article h2 {
   font-size: 20px;
   margin-bottom: 22px;
 }
-body .sidebar ul li article p {
+.sidebar ul li article p {
   color: #ebf7f7;
   /* text color */
 
@@ -271,13 +347,13 @@ body .sidebar ul li article p {
   font-size: 14px;
   font-weight: 200;
 }
-body .sidebar ul li article a {
+.sidebar ul li article a.readMore {
   color: #991515;
   /* text color */
 
   font-family: "Museo Sans", "Effra", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
-  font-weight: 900;
+  font-weight: 500;
   display: block;
   margin: 22px 0;
   padding: 10px 0;
@@ -286,11 +362,15 @@ body .sidebar ul li article a {
   text-decoration: none;
   text-transform: uppercase;
 }
-body .map {
+.sidebar ul li article a.readMore:hover {
+  color: #fdf9e5;
+  background-color: #991515;
+}
+.map {
   margin-top: 30px;
   margin-bottom: 30px;
 }
-body .map #infoMap {
+.map #infoMap {
   float: right;
   padding: 20px;
   border: 1px solid rgba(0, 0, 0, 0.4);
@@ -303,7 +383,7 @@ body .map #infoMap {
   /* gradient overlay */
 
 }
-body .map #infoMap h1 {
+.map #infoMap h1 {
   color: #5b1919;
   /* text color */
 
@@ -313,10 +393,10 @@ body .map #infoMap h1 {
   font-weight: 900;
   margin-bottom: 15px;
 }
-body .map #infoMap ul {
+.map #infoMap ul {
   list-style: none;
 }
-body .map #infoMap ul li {
+.map #infoMap ul li {
   color: #212121;
   /* text color */
 
@@ -324,14 +404,14 @@ body .map #infoMap ul li {
   font-size: 20px;
   font-weight: 200;
 }
-body footer {
+footer {
   margin-bottom: 20px !important;
 }
-body footer .footerNav ul li {
+footer .footerNav ul li {
   font-family: "Helvetica Neue";
   font-size: 20px;
 }
-body footer .footerNav ul li a {
+footer .footerNav ul li a {
   color: #212121;
   /* text color */
 

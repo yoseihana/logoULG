@@ -219,18 +219,58 @@ body{
   background-color: @main-bg; // couleur du bg
   font: normal 16px/1 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: @black;
-  h1.logo{
+}
+#header{
+  z-index: 9999;
+  position: absolute;
+  top: 20px;
+  h1{
       color: @heading-color; // text heading color
       font-family: "Museo Sans","Effra", "Helvetica Neue", Helvetica, Arial, sans-serif;
       font-size: 87px;
       text-shadow: 0 1px 0 rgba(0,0,0,.7); // drop shadow
+      margin-left: 20px;
       a{
         text-decoration: none;
         color: @heading-color;
+        span{
+          font-size: 18px; 
+          font-family: Georgia, Times, "Times New Roman", serif;
+          font-style: italic;
+          text-shadow: none;
+          color: @text-color;
+        }
       }
   }
-
+}
+  .slider {
+    position: absolute;
+    top:0;
+    display: block;
+    img{
+      z-index: 1;
+      position: relative;
+      display: block;
+      border: 1px solid @black;
+      -webkit-box-sizing: border-box; 
+      -moz-box-sizing: border-box;    
+      box-sizing: border-box;
+    }
+    .infoSlider{
+      margin-top: -200px;
+      z-index:2;
+      float: right;
+      margin-right: 40px;
+      padding: 20px;
+      border: 1px solid rgba(0,0,0,.4); /* stroke */
+      background-color: #f1f1f1; /* layer fill content */
+      background-image: linear-gradient(bottom, rgba(0,0,0,.2) 0%, rgba(255,255,255,.2) 100%); /* gradient overlay */
+    }
+  }
   nav#mainNavigation {
+    clear:both;
+    overflow: hidden;
+    margin-top: 470px;
     border: 1px solid rgba(59,59,59,.5); /* stroke */
     background-color: #fff9ea; /* layer fill content */
     box-shadow: 0 2px 4px rgba(0,0,0,.15); /* drop shadow */
@@ -268,11 +308,24 @@ body{
       text-shadow: 0 1px 0 rgba(0,0,0,.7); /* drop shadow */
       margin-bottom: 30px;
     }
-    identity {
+    #identity {
       p{
         color: @text-color; /* text color */
         font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-size: 16px;
+      }
+      img{
+        border: 1px solid @text-color;
+        -webkit-box-sizing: border-box; 
+        -moz-box-sizing: border-box;    
+        box-sizing: border-box;
+      }
+    }
+    #interest{
+      .list{
+        text-indent: -9999px;
+        background: transparent url('../img/interest.png') 0 0 no-repeat;
+        height: 200px;
       }
     }
   }
@@ -280,22 +333,34 @@ body{
 
 
   #leftBar{
-    
+    h2{
+      visibility: : hidden;
+      display: none;
+    }
     #searchForm{
-        input{
-            float: left;
-            display: inline;
-            height:50px;
-            color: @main-bg;
-            opacity: .8;
-        }
-        input[type=submit]{
-            background: transparent url(loupe.png) 0 0 no-repeat;
-            width: 50px;
-            text-indent: -9999px;
-            outline: none;
-            cursor: pointer;
-        }
+      input[type=text]{
+          opacity: .8; /* layer alpha */
+          border: 1px solid #8f8f8f; /* stroke */
+          height:50px;
+          width: 200px;
+          color: @black;
+          background-color: @main-bg;
+          opacity: .8;
+          outline: none;
+          font: 16px/1 normal "Helvetica Neue", Helvetica, Arial, sans-serif; 
+          &:focus{
+            border: 1px solid #000;
+          }
+      }
+      input[type=submit]{
+          background: transparent url(loupe.png) 0 0 no-repeat;
+          width: 50px;
+          text-indent: -9999px;
+          outline: none;
+          cursor: pointer;
+          border:  1px solid #8f8f8f; /* stroke */
+          height: 50px
+      }
     }
     
     #language{
@@ -337,11 +402,11 @@ body{
             font-size: 14px;
             font-weight: 200;
           }
-          a{
+          a.readMore{
             color: @heading-color; /* text color */
             font-family: "Museo Sans","Effra", "Helvetica Neue", Helvetica, Arial, sans-serif;
             font-size: 14px;
-            font-weight: 900;
+            font-weight: 500;
             display: block;
             margin: 22px 0;
             padding: 10px 0;
@@ -349,11 +414,14 @@ body{
             background-color: @main-bg;
             text-decoration: none;
             text-transform: uppercase;
+            &:hover{
+              color: @main-bg;
+              background-color: @heading-color;
+            }
           }
         }
       }
     }
-      
   }
   .map{
     margin-top: 30px;
@@ -397,7 +465,7 @@ body{
     }
   }
 
-}
+
 
   
 
