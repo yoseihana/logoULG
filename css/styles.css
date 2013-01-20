@@ -191,6 +191,11 @@ body nav#mainNavigation ul li a {
 
   font-family: "Museo Sans", "Effra", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 22px;
+  padding-bottom: 5px;
+}
+body nav#mainNavigation ul li a:hover {
+  border-bottom: 1px solid #991515;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.2);
 }
 body div#main h1 {
   color: #991515;

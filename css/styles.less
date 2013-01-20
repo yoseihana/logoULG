@@ -247,7 +247,11 @@ body{
         color: @heading-color; /* text color */
         font-family: "Museo Sans","Effra", "Helvetica Neue", Helvetica, Arial, sans-serif;
         font-size: 22px;
-
+        padding-bottom: 5px;
+        &:hover{
+          border-bottom: 1px solid @heading-color;
+          text-shadow: 0 1px 0 rgba(0,0,0,.2);
+        }
       }
     }
   }
